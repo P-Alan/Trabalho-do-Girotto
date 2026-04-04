@@ -331,36 +331,43 @@ int divisao1()
         {
             if (calculo_furia_1[1] >= 2 && calculo_furia_1[1] <= 5 && calculo_furia_1[2] < 5 && calculo_furia_1[2] > 0)
             {
-                if (calculo_furia_1[1] - 1 > 5 - calculo_furia_1[2])
-                {
-                    printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", 5 - calculo_furia_1[2]);
-                    furia_transferida = ler_int("Escolha uma opcao: ", 1, 5 - calculo_furia_1[2]);
-                    calculo_furia_1[2] += furia_transferida;
-                    calculo_furia_1[1] -= furia_transferida;
-                    printf("\nAs suas Gousmas agora têm:\n\n- Gousma Azul | Fúria : %i\n- Gousma Verde | Fúria : %i\n", calculo_furia_1[1], calculo_furia_1[2]);
-                    break;
-                }
-                if (calculo_furia_1[1] - 1 < 5 - calculo_furia_1[2])
-                {
-                    printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", calculo_furia_1[1] - 1);
-                    furia_transferida = ler_int("Escolha uma opcao: ", 1, calculo_furia_1[1] - 1);
-                    calculo_furia_1[2] += furia_transferida;
-                    calculo_furia_1[1] -= furia_transferida;
-                    printf("\nAs suas Gousmas agora têm:\n\n- Gousma Azul | Fúria : %i\n- Gousma Verde | Fúria : %i\n", calculo_furia_1[1], calculo_furia_1[2]);
-                    break;
-                }
-                if (calculo_furia_1[1] - 1 == 5 - calculo_furia_1[2])
-                {
-                    printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", calculo_furia_1[1] - 1);
-                    furia_transferida = ler_int("Escolha uma opcao: ", 1, calculo_furia_1[1] - 1);
-                    calculo_furia_1[2] += furia_transferida;
-                    calculo_furia_1[1] -= furia_transferida;
-                    printf("\nAs suas Gousmas agora têm:\n\n- Gousma Azul | Fúria : %i\n- Gousma Verde | Fúria : %i\n", calculo_furia_1[1], calculo_furia_1[2]);
-                    break;
-                }
                 if (calculo_furia_1[2] == 5)
                 {
-                    printf("\nVocê não pode transferir Fúria para a Gousma Verde !!\n\n");
+                    printf("\nVocê não pode transferir Fúria para a Gousma Vermelha, escolha outra !!\n\n");
+                }
+                else
+                {
+                    if (calculo_furia_1[1] - 1 > 5 - calculo_furia_1[2])
+                    {
+                        printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", 5 - calculo_furia_1[2]);
+                        furia_transferida = ler_int("Escolha uma opcao: ", 1, 5 - calculo_furia_1[2]);
+                        calculo_furia_1[2] += furia_transferida;
+                        calculo_furia_1[1] -= furia_transferida;
+                        printf("\nAs suas Gousmas agora têm:\n\n- Gousma Azul | Fúria : %i\n- Gousma Verde | Fúria : %i\n", calculo_furia_1[1], calculo_furia_1[2]);
+                        break;
+                    }
+                    if (calculo_furia_1[1] - 1 < 5 - calculo_furia_1[2])
+                    {
+                        printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", calculo_furia_1[1] - 1);
+                        furia_transferida = ler_int("Escolha uma opcao: ", 1, calculo_furia_1[1] - 1);
+                        calculo_furia_1[2] += furia_transferida;
+                        calculo_furia_1[1] -= furia_transferida;
+                        printf("\nAs suas Gousmas agora têm:\n\n- Gousma Azul | Fúria : %i\n- Gousma Verde | Fúria : %i\n", calculo_furia_1[1], calculo_furia_1[2]);
+                        break;
+                    }
+                    if (calculo_furia_1[1] - 1 == 5 - calculo_furia_1[2])
+                    {
+                        printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", calculo_furia_1[1] - 1);
+                        furia_transferida = ler_int("Escolha uma opcao: ", 1, calculo_furia_1[1] - 1);
+                        calculo_furia_1[2] += furia_transferida;
+                        calculo_furia_1[1] -= furia_transferida;
+                        printf("\nAs suas Gousmas agora têm:\n\n- Gousma Azul | Fúria : %i\n- Gousma Verde | Fúria : %i\n", calculo_furia_1[1], calculo_furia_1[2]);
+                        break;
+                    }
+                    if (calculo_furia_1[2] == 5)
+                    {
+                        printf("\nVocê não pode transferir Fúria para a Gousma Verde !!\n\n");
+                    }
                 }
             }
 
@@ -373,7 +380,7 @@ int divisao1()
 
             // CASO A GOUSMA NÃO TENHA FÚRIA O SUFICIÊNTE
 
-            else
+            if (calculo_furia_1[1] == 1)
             {
                 printf("\nEssa Gousma não têm fúria suficiênte, escolha outra !!\n");
             }
@@ -381,38 +388,45 @@ int divisao1()
 
         if (divisor == 2)
         {
-            if (calculo_furia_1[1] >= 2 && calculo_furia_1[1] <= 5 && calculo_furia_1[2] < 5 && calculo_furia_1[2] > 0)
+            if (calculo_furia_1[2] >= 2 && calculo_furia_1[2] <= 5 && calculo_furia_1[1] < 5 && calculo_furia_1[1] > 0)
             {
-                if (calculo_furia_1[2] - 1 >= 5 - calculo_furia_1[1])
-                {
-                    printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", 5 - calculo_furia_1[1]);
-                    furia_transferida = ler_int("Escolha uma opcao: ", 1, 5 - calculo_furia_1[1]);
-                    calculo_furia_1[1] += furia_transferida;
-                    calculo_furia_1[2] -= furia_transferida;
-                    printf("\nAs suas Gousmas agora têm:\n\n- Gousma Azul | Fúria : %i\n- Gousma Verde | Fúria : %i\n", calculo_furia_1[1], calculo_furia_1[2]);
-                    break;
-                }
-                if (calculo_furia_1[2] - 1 <= 5 - calculo_furia_1[1])
-                {
-                    printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", calculo_furia_1[2] - 1);
-                    furia_transferida = ler_int("Escolha uma opcao: ", 1, calculo_furia_1[2] - 1);
-                    calculo_furia_1[1] += furia_transferida;
-                    calculo_furia_1[2] -= furia_transferida;
-                    printf("\nAs suas Gousmas agora têm:\n\n- Gousma Azul | Fúria : %i\n- Gousma Verde | Fúria : %i\n", calculo_furia_1[1], calculo_furia_1[2]);
-                    break;
-                }
-                if (calculo_furia_1[2] - 1 == 5 - calculo_furia_1[1])
-                {
-                    printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", calculo_furia_1[2] - 1);
-                    furia_transferida = ler_int("Escolha uma opcao: ", 1, calculo_furia_1[2] - 1);
-                    calculo_furia_1[1] += furia_transferida;
-                    calculo_furia_1[2] -= furia_transferida;
-                    printf("\nAs suas Gousmas agora têm:\n\n- Gousma Azul | Fúria : %i\n- Gousma Verde | Fúria : %i\n", calculo_furia_1[1], calculo_furia_1[2]);
-                    break;
-                }
                 if (calculo_furia_1[1] == 5)
                 {
-                    printf("\nVocê não pode transferir Fúria para a Gousma Azul !!\n\n");
+                    printf("\nVocê não pode transferir Fúria para a Gousma Vermelha, escolha outra !!\n\n");
+                }
+                else
+                {
+                    if (calculo_furia_1[2] - 1 >= 5 - calculo_furia_1[1])
+                    {
+                        printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", 5 - calculo_furia_1[1]);
+                        furia_transferida = ler_int("Escolha uma opcao: ", 1, 5 - calculo_furia_1[1]);
+                        calculo_furia_1[1] += furia_transferida;
+                        calculo_furia_1[2] -= furia_transferida;
+                        printf("\nAs suas Gousmas agora têm:\n\n- Gousma Azul | Fúria : %i\n- Gousma Verde | Fúria : %i\n", calculo_furia_1[1], calculo_furia_1[2]);
+                        break;
+                    }
+                    if (calculo_furia_1[2] - 1 <= 5 - calculo_furia_1[1])
+                    {
+                        printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", calculo_furia_1[2] - 1);
+                        furia_transferida = ler_int("Escolha uma opcao: ", 1, calculo_furia_1[2] - 1);
+                        calculo_furia_1[1] += furia_transferida;
+                        calculo_furia_1[2] -= furia_transferida;
+                        printf("\nAs suas Gousmas agora têm:\n\n- Gousma Azul | Fúria : %i\n- Gousma Verde | Fúria : %i\n", calculo_furia_1[1], calculo_furia_1[2]);
+                        break;
+                    }
+                    if (calculo_furia_1[2] - 1 == 5 - calculo_furia_1[1])
+                    {
+                        printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", calculo_furia_1[2] - 1);
+                        furia_transferida = ler_int("Escolha uma opcao: ", 1, calculo_furia_1[2] - 1);
+                        calculo_furia_1[1] += furia_transferida;
+                        calculo_furia_1[2] -= furia_transferida;
+                        printf("\nAs suas Gousmas agora têm:\n\n- Gousma Azul | Fúria : %i\n- Gousma Verde | Fúria : %i\n", calculo_furia_1[1], calculo_furia_1[2]);
+                        break;
+                    }
+                    if (calculo_furia_1[1] == 5)
+                    {
+                        printf("\nVocê não pode transferir Fúria para a Gousma Azul !!\n\n");
+                    }
                 }
             }
 
@@ -425,7 +439,7 @@ int divisao1()
 
             // CASO A GOUSMA NÃO TENHA FÚRIA O SUFICIÊNTE
 
-            else
+            if (calculo_furia_1[2] == 1)
             {
                 printf("\nEssa Gousma não têm fúria suficiênte, escolha outra !!\n");
             }
@@ -449,36 +463,39 @@ int divisao2()
         {
             if (calculo_furia_2[1] >= 2 && calculo_furia_2[1] <= 5 && calculo_furia_2[2] < 5 && calculo_furia_2[2] > 0)
             {
-                if (calculo_furia_2[1] - 1 >= 5 - calculo_furia_2[2])
+                if (calculo_furia_2[2] == 5)
                 {
-                    printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", 5 - calculo_furia_2[2]);
-                    furia_transferida = ler_int("Escolha uma opcao: ", 1, 5 - calculo_furia_2[2]);
-                    calculo_furia_2[2] += furia_transferida;
-                    calculo_furia_2[1] -= furia_transferida;
-                    printf("\nAs suas Gousmas agora têm:\n\n- Gousma Amarela | Fúria : %i\n- Gousma Vermelha | Fúria : %i\n", calculo_furia_2[1], calculo_furia_2[2]);
-                    break;
+                    printf("\nVocê não pode transferir Fúria para a Gousma Vermelha, escolha outra !!\n\n");
                 }
-                if (calculo_furia_2[1] - 1 <= 5 - calculo_furia_2[2])
+                else
                 {
-                    printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", calculo_furia_2[1] - 1);
-                    furia_transferida = ler_int("Escolha uma opcao: ", 1, calculo_furia_2[1] - 1);
-                    calculo_furia_2[2] += furia_transferida;
-                    calculo_furia_2[1] -= furia_transferida;
-                    printf("\nAs suas Gousmas agora têm:\n\n- Gousma Amarela | Fúria : %i\n- Gousma Vermelha | Fúria : %i\n", calculo_furia_2[1], calculo_furia_2[2]);
-                    break;
-                }
-                if (calculo_furia_2[1] - 1 == 5 - calculo_furia_2[2])
-                {
-                    printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", calculo_furia_2[1] - 1);
-                    furia_transferida = ler_int("Escolha uma opcao: ", 1, calculo_furia_2[1] - 1);
-                    calculo_furia_2[2] += furia_transferida;
-                    calculo_furia_2[1] -= furia_transferida;
-                    printf("\nAs suas Gousmas agora têm:\n\n- Gousma Amarela | Fúria : %i\n- Gousma Vermelha | Fúria : %i\n", calculo_furia_2[1], calculo_furia_2[2]);
-                    break;
-                }
-                if (calculo_furia_1[1] == 5)
-                {
-                    printf("\nVocê não pode transferir Fúria para a Gousma Vermelha !!\n\n");
+                    if (calculo_furia_2[1] - 1 >= 5 - calculo_furia_2[2])
+                    {
+                        printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", 5 - calculo_furia_2[2]);
+                        furia_transferida = ler_int("Escolha uma opcao: ", 1, 5 - calculo_furia_2[2]);
+                        calculo_furia_2[2] += furia_transferida;
+                        calculo_furia_2[1] -= furia_transferida;
+                        printf("\nAs suas Gousmas agora têm:\n\n- Gousma Amarela | Fúria : %i\n- Gousma Vermelha | Fúria : %i\n", calculo_furia_2[1], calculo_furia_2[2]);
+                        break;
+                    }
+                    if (calculo_furia_2[1] - 1 <= 5 - calculo_furia_2[2])
+                    {
+                        printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", calculo_furia_2[1] - 1);
+                        furia_transferida = ler_int("Escolha uma opcao: ", 1, calculo_furia_2[1] - 1);
+                        calculo_furia_2[2] += furia_transferida;
+                        calculo_furia_2[1] -= furia_transferida;
+                        printf("\nAs suas Gousmas agora têm:\n\n- Gousma Amarela | Fúria : %i\n- Gousma Vermelha | Fúria : %i\n", calculo_furia_2[1], calculo_furia_2[2]);
+                        break;
+                    }
+                    if (calculo_furia_2[1] - 1 == 5 - calculo_furia_2[2])
+                    {
+                        printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", calculo_furia_2[1] - 1);
+                        furia_transferida = ler_int("Escolha uma opcao: ", 1, calculo_furia_2[1] - 1);
+                        calculo_furia_2[2] += furia_transferida;
+                        calculo_furia_2[1] -= furia_transferida;
+                        printf("\nAs suas Gousmas agora têm:\n\n- Gousma Amarela | Fúria : %i\n- Gousma Vermelha | Fúria : %i\n", calculo_furia_2[1], calculo_furia_2[2]);
+                        break;
+                    }
                 }
             }
 
@@ -491,7 +508,7 @@ int divisao2()
 
             // CASO A GOUSMA NÃO TENHA FÚRIA O SUFICIÊNTE
 
-            else
+            if (calculo_furia_2[1] == 1)
             {
                 printf("\nEssa Gousma não têm fúria suficiênte, escolha outra !!\n");
             }
@@ -499,38 +516,42 @@ int divisao2()
 
         if (divisor == 2)
         {
-            if (calculo_furia_2[1] >= 2 && calculo_furia_2[1] <= 5 && calculo_furia_2[2] < 5 && calculo_furia_2[2] > 0)
+            if (calculo_furia_2[2] >= 2 && calculo_furia_2[2] <= 5 && calculo_furia_2[1] < 5 && calculo_furia_2[1] > 0)
             {
-                if (calculo_furia_2[2] - 1 >= 5 - calculo_furia_2[1])
+                if (calculo_furia_2[1] == 5)
                 {
-                    printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", 5 - calculo_furia_2[1]);
-                    furia_transferida = ler_int("Escolha uma opcao: ", 1, 5 - calculo_furia_2[1]);
-                    calculo_furia_2[1] += furia_transferida;
-                    calculo_furia_2[2] -= furia_transferida;
-                    printf("\nAs suas Gousmas agora têm:\n\n- Gousma Amarela | Fúria : %i\n- Gousma Vermelha | Fúria : %i\n", calculo_furia_2[1], calculo_furia_2[2]);
-                    break;
+                    printf("\nVocê não pode transferir Fúria para a Gousma Amarela, escolha outra !!\n\n");
                 }
-                if (calculo_furia_2[2] - 1 <= 5 - calculo_furia_2[1])
+                else
                 {
-                    printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", calculo_furia_2[2] - 1);
-                    furia_transferida = ler_int("Escolha uma opcao: ", 1, calculo_furia_2[2] - 1);
-                    calculo_furia_2[1] += furia_transferida;
-                    calculo_furia_2[2] -= furia_transferida;
-                    printf("\nAs suas Gousmas agora têm:\n\n- Gousma Amarela | Fúria : %i\n- Gousma Vermelha | Fúria : %i\n", calculo_furia_2[1], calculo_furia_2[2]);
-                    break;
-                }
-                if (calculo_furia_2[2] - 1 <= 5 - calculo_furia_2[1])
-                {
-                    printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", calculo_furia_2[2] - 1);
-                    furia_transferida = ler_int("Escolha uma opcao: ", 1, calculo_furia_2[2] - 1);
-                    calculo_furia_2[1] += furia_transferida;
-                    calculo_furia_2[2] -= furia_transferida;
-                    printf("\nAs suas Gousmas agora têm:\n\n- Gousma Amarela | Fúria : %i\n- Gousma Vermelha | Fúria : %i\n", calculo_furia_2[1], calculo_furia_2[2]);
-                    break;
-                }
-                if (calculo_furia_1[1] == 5)
-                {
-                    printf("\nVocê não pode transferir Fúria para a Gousma Verde !!\n\n");
+
+                    if (calculo_furia_2[2] - 1 >= 5 - calculo_furia_2[1])
+                    {
+                        printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", 5 - calculo_furia_2[1]);
+                        furia_transferida = ler_int("Escolha uma opcao: ", 1, 5 - calculo_furia_2[1]);
+                        calculo_furia_2[1] += furia_transferida;
+                        calculo_furia_2[2] -= furia_transferida;
+                        printf("\nAs suas Gousmas agora têm:\n\n- Gousma Amarela | Fúria : %i\n- Gousma Vermelha | Fúria : %i\n", calculo_furia_2[1], calculo_furia_2[2]);
+                        break;
+                    }
+                    if (calculo_furia_2[2] - 1 <= 5 - calculo_furia_2[1])
+                    {
+                        printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", calculo_furia_2[2] - 1);
+                        furia_transferida = ler_int("Escolha uma opcao: ", 1, calculo_furia_2[2] - 1);
+                        calculo_furia_2[1] += furia_transferida;
+                        calculo_furia_2[2] -= furia_transferida;
+                        printf("\nAs suas Gousmas agora têm:\n\n- Gousma Amarela | Fúria : %i\n- Gousma Vermelha | Fúria : %i\n", calculo_furia_2[1], calculo_furia_2[2]);
+                        break;
+                    }
+                    if (calculo_furia_2[2] - 1 <= 5 - calculo_furia_2[1])
+                    {
+                        printf("\nQuanto de Fúria você quer transferir (1 - %d)?\n", calculo_furia_2[2] - 1);
+                        furia_transferida = ler_int("Escolha uma opcao: ", 1, calculo_furia_2[2] - 1);
+                        calculo_furia_2[1] += furia_transferida;
+                        calculo_furia_2[2] -= furia_transferida;
+                        printf("\nAs suas Gousmas agora têm:\n\n- Gousma Amarela | Fúria : %i\n- Gousma Vermelha | Fúria : %i\n", calculo_furia_2[1], calculo_furia_2[2]);
+                        break;
+                    }
                 }
             }
 
@@ -543,7 +564,7 @@ int divisao2()
 
             // CASO A GOUSMA NÃO TENHA FÚRIA O SUFICIÊNTE
 
-            else
+            if (calculo_furia_2[2] == 1)
             {
                 printf("\nEssa Gousma não têm fúria suficiênte, escolha outra !!\n");
             }
