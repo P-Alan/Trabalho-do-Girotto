@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 // LIMPAR TELA
+
 static void limpar_tela()
 {
     #ifdef _WIN32
@@ -12,14 +13,15 @@ static void limpar_tela()
 }
 
 // LIMPAR A MEMÓRIA
+
 static void limpar_buffer()
 {
     int c;
-    while ((c = getchar()) != '\n' && c != EOF)
-        ;
+    while ((c = getchar()) != '\n' && c != EOF);
 }
 
 // FUNÇÃO PARA LER ESCOLHAS (números inteiros)
+
 static int ler_int(const char *prompt, int min, int max)
 {
     int valor;
@@ -31,6 +33,7 @@ static int ler_int(const char *prompt, int min, int max)
         resultado = scanf("%d", &valor);
 
         // USUÁRIO FECHOU A ENTRADA
+
         if (resultado == EOF)
         {
             printf("\nEntrada encerrada. Saindo do jogo...\n");
@@ -38,6 +41,7 @@ static int ler_int(const char *prompt, int min, int max)
         }
 
         // USUÁRIO DIGITOU ALGO QUE NÃO É NÚMERO
+
         if (resultado != 1)
         {
             printf("Entrada inválida! Digite um número entre %d e %d.\n", min, max);
@@ -46,6 +50,7 @@ static int ler_int(const char *prompt, int min, int max)
         }
 
         // VERIFICA SE TEM LIXO DEPOIS DO NÚMERO
+
         int proximo = getchar();
         if (proximo == EOF)
         {
@@ -60,6 +65,7 @@ static int ler_int(const char *prompt, int min, int max)
         }
 
         // VERIFICA SE O NÚMERO ESTÁ DENTRO DO INTERVALO
+
         if (valor < min || valor > max)
         {
             printf("Opção fora do intervalo! Escolha entre %d e %d.\n", min, max);
@@ -71,6 +77,7 @@ static int ler_int(const char *prompt, int min, int max)
 }
 
 // PERGUNTAS E RESPOSTAS
+
 static int perguntas_e_respostas()
 {
     limpar_tela();
@@ -78,6 +85,7 @@ static int perguntas_e_respostas()
     printf("O jogo consiste em 5 perguntas, tente acertar! ;)\n\n");
 
     // PERGUNTA 1
+
     printf("PRIMEIRA PERGUNTA:\nQual o professor mais lindo do CESUPA?\n");
     printf("\n[1] Pedro Girotto");
     printf("\n[2] Polyana Ribeiro");
@@ -98,6 +106,7 @@ static int perguntas_e_respostas()
     printf("\nVOCE ACERTOU !!\n\n");
 
     // PERGUNTA 2
+
     printf("SEGUNDA PERGUNTA:\nQuanto vale esse trabalho?\n");
     printf("\n[1] 2");
     printf("\n[2] 0.5");
@@ -116,8 +125,9 @@ static int perguntas_e_respostas()
             return 0; // volta ao menu
     }
     printf("\nVOCE ACERTOU !!\n\n");
-
     // PERGUNTA 3
+
+
     printf("TERCEIRA PERGUNTA:\nQual vai ser o game do ano?\n");
     printf("\n[1] Resident Evil: Requiem");
     printf("\n[2] Mineirinho 2");
@@ -138,6 +148,7 @@ static int perguntas_e_respostas()
     printf("\nVOCE ACERTOU !!\n\n");
 
     // PERGUNTA 4
+
     printf("QUARTA PERGUNTA:\nQuanto eh 2 + 2?\n");
     printf("\n[1] -4");
     printf("\n[2] 0.19");
@@ -158,6 +169,7 @@ static int perguntas_e_respostas()
     printf("\nVOCE ACERTOU !!\n\n");
 
     // PERGUNTA 5
+
     printf("QUINTA PERGUNTA:\nQual a melhor my little poney?\n");
     printf("\n[1] Rainbow Dash");
     printf("\n[2] Apple Jack");
@@ -187,6 +199,7 @@ static int perguntas_e_respostas()
 }
 
 // COBRA NA CAIXA
+
 static int cobra_na_caixa()
 {
     const char *nomes[] = {"", "Pedro Alan", "João Gabriel", "Cleopatra", "Ronaldo", "Mordecai", "Rigby", "Café"};
@@ -220,10 +233,13 @@ static int cobra_na_caixa()
     }
 
     // sorteio de qual jogador começa
+
     const char *jogadores[2] = {nomes[escolha1], nomes[escolha2]};
     int sorteio = rand() % 2;
     const char *jogador_escolhido = jogadores[sorteio];
+
     // pega sempre o valor contrário do que foi sorteado primeiro
+
     const char *jogador_resto = jogadores[1 - sorteio];
 
     int rodada = 1;
@@ -235,6 +251,7 @@ static int cobra_na_caixa()
     printf("O primeiro a jogar sera: %s\n", jogador_escolhido);
 
     // Randomização do botão e da cobra por reinicialização
+    
     int cobra = (rand() % 5) + 1;
     int botao;
     do
@@ -250,6 +267,7 @@ static int cobra_na_caixa()
             if (caixas_disponiveis[i])
             {
                 printf("[CAIXA %d]\n", i);
+
                 // printf("%d %d", cobra, botao);
             }
         int caixa_escolhida;
@@ -495,6 +513,7 @@ int ataque2()
     while (1)
     {
         limpar_tela();
+
         // ESCOLHER O ATACANTE
 
         printf("\n-- Escolha com qual Gousma você vai atacar --\n\n");
@@ -685,6 +704,7 @@ static int gousmas_war()
 }
 
 // MENU
+
 int main()
 {
     int menu_ativo = 1;
